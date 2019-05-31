@@ -8,10 +8,10 @@
             background-color: gray;
         }
         
-        table {}
-        
         td {
             border: 1px solid;
+            height: 50px;
+            width: 50px;
         }
     </style>
 </head>
@@ -23,6 +23,23 @@
     <button id="addcol" onclick="addColumn()">+ col</button>
     <button id="remcol" onclick="removeColumn()">- col</button>
 
+    <select>
+      <option value="black">Black</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+
+    <br>
+
+    <button id="uncoloredfill" onclick="changeAllUncolored()">Fill Uncolored Cells</button>
+    <button id="allfill" onclick="changeAll()">Fill All Cells</button>
+    <button id="clear" onclick="clearAll()">Clear All Cells</button>
+
     <table id="pixelArt">
 
     </table>
@@ -31,7 +48,5 @@
     </script>
 
 </body>
-
-</html>
 
 </html>
