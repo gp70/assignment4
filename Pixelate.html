@@ -1,42 +1,54 @@
 <html>
+
 <head>
-<style>
-.pixsquare
-{
-  height: 50px;
-  width: 50px;
-  background-color: gray;
-}
-</style>
+    <style>
+			@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+			body{
+				font-family: 'Press Start 2P', cursive;
+				text-align: center;
+			}
+			table{
+				margin: auto;
+			}
+        td {
+            border: 1px solid;
+            height: 50px;
+            width: 50px;
+        }
+
+    </style>
 </head>
+
 <body>
+		<h1>Pixelate</h1>
+    <button id="addrow" onclick="insertRow()">+ row</button>
+    <button id="remrow" onclick="removeRow()">- row</button>
+    <button id="addcol" onclick="addColumn()">+ col</button>
+    <button id="remcol" onclick="removeColumn()">- col</button>
 
-<button id="addrow">+ row</button>
-<button id="remrow">- row</button>
-<button id="addcol">+ col</button>
-<button id="remcol">- col</button>
+    <select id="colors">
+      <option value="black">Black</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
 
-<table></table>
+    <br>
 
-<script>
-	/*
-	var PixSquare = document.registerElement("pix-square");
-	document.body.appendChild(new PixSqure);
+    <button id="uncoloredfill" onclick="changeAllUncolored()">Fill Uncolored Cells</button>
+    <button id="allfill" onclick="changeAll()">Fill All Cells</button>
+    <button id="clear" onclick="clearAll()">Clear All Cells</button>
 
-	var PixSquareProto = Object.create(HTMLElement.prototype);
+				<table id="pixelArt"></table>
+    
 
-	Object.defineProperty(PixSquareProto, "color",
-	{
-		value: "gray",
-		writable: true
-	});
-
-	var PixSquare = document.registerElement("pix-square", 
-	{
-		prototype: PixSquareProto
-	});
-*/
-</script>
+    <script src="script.js">
+    </script>
 
 </body>
+
 </html>
