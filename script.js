@@ -3,6 +3,7 @@ var row = 0;
 var col = 4;
 var currColor = 'red';
 const colorSelector = document.getElementById('colors');
+var mouseDown = 0;
 console.log(colorSelector);
 
 //options[document.getElementById("colors").selectedIndex].value;
@@ -18,8 +19,13 @@ function insertRow() {
         newCell.style.backgroundColor = "#FFFFF2";
 
         //Click color change
-        newCell.addEventListener('click', function(e){
-          this.style.backgroundColor = currColor;
+        newCell.addEventListener('mousedown', function(e) {
+            this.style.backgroundColor = currColor;
+        });
+
+        newCell.addEventListener('mouseover', function(e) {
+            if (mouseDown)
+                this.style.backgroundColor = currColor;
         });
 
 
@@ -44,10 +50,15 @@ function addColumn() {
     for (let i = 0; i < row; i++) {
         let newCell = table.rows[i].insertCell(-1);
         newCell.style.backgroundColor = "#FFFFF2";
-        
+
         //change color onClick
-        newCell.addEventListener('click', function(e){
-          this.style.backgroundColor = currColor;
+        newCell.addEventListener('mousedown', function(e) {
+            this.style.backgroundColor = currColor;
+        });
+
+        newCell.addEventListener('mouseover', function(e) {
+            if (mouseDown)
+                this.style.backgroundColor = currColor;
         });
 
 
@@ -106,10 +117,17 @@ function changeAll() {
 }
 
 function clearAll() {
-  for (let i = 0; i < row; i++) {
-    for (let j = 0; j < col; j++) {
-      let currCell = table.rows[i].cells[j];
-      currCell.style.backgroundColor = "rgb(255,255,242)";
+    for (let i = 0; i < row; i++) {
+        for (let j = 0; j < col; j++) {
+            let currCell = table.rows[i].cells[j];
+            currCell.style.backgroundColor = "rgb(255,255,242)";
+        }
     }
-  }
+}
+
+document.body.onmousedown = function() {
+    mouseDown = 1;
+}
+document.body.onmouseup = function() {
+    mouseDown = 0;
 }
