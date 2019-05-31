@@ -2,22 +2,25 @@
 
 <head>
     <style>
-        .pixsquare {
-            height: 50px;
-            width: 50px;
-            background-color: gray;
-        }
-        
+			@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+			body{
+				font-family: 'Press Start 2P', cursive;
+				text-align: center;
+			}
+			table{
+				margin: auto;
+			}
         td {
             border: 1px solid;
             height: 50px;
             width: 50px;
         }
+
     </style>
 </head>
 
 <body>
-
+		<h1>Pixelate</h1>
     <button id="addrow" onclick="insertRow()">+ row</button>
     <button id="remrow" onclick="removeRow()">- row</button>
     <button id="addcol" onclick="addColumn()">+ col</button>
@@ -40,9 +43,8 @@
     <button id="allfill" onclick="changeAll()">Fill All Cells</button>
     <button id="clear" onclick="clearAll()">Clear All Cells</button>
 
-    <table id="pixelArt">
-
-    </table>
+				<table id="pixelArt"></table>
+    
 
     <script src="script.js">
     </script>
