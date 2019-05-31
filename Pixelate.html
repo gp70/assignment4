@@ -1,42 +1,37 @@
 <html>
+
 <head>
-<style>
-.pixsquare
-{
-  height: 50px;
-  width: 50px;
-  background-color: gray;
-}
-</style>
+    <style>
+        .pixsquare {
+            height: 50px;
+            width: 50px;
+            background-color: gray;
+        }
+        
+        table {}
+        
+        td {
+            border: 1px solid;
+        }
+    </style>
 </head>
+
 <body>
 
-<button id="addrow">+ row</button>
-<button id="remrow">- row</button>
-<button id="addcol">+ col</button>
-<button id="remcol">- col</button>
+    <button id="addrow" onclick="insertRow()">+ row</button>
+    <button id="remrow" onclick="removeRow()">- row</button>
+    <button id="addcol" onclick="addColumn()">+ col</button>
+    <button id="remcol" onclick="removeColumn()">- col</button>
 
-<table></table>
+    <table id="pixelArt">
 
-<script>
-	/*
-	var PixSquare = document.registerElement("pix-square");
-	document.body.appendChild(new PixSqure);
+    </table>
 
-	var PixSquareProto = Object.create(HTMLElement.prototype);
-
-	Object.defineProperty(PixSquareProto, "color",
-	{
-		value: "gray",
-		writable: true
-	});
-
-	var PixSquare = document.registerElement("pix-square", 
-	{
-		prototype: PixSquareProto
-	});
-*/
-</script>
+    <script src="script.js">
+    </script>
 
 </body>
+
+</html>
+
 </html>
